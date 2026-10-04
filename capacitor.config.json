@@ -1,0 +1,13 @@
+{
+  "appId": "com.stevie4ever.jellylibrary",
+  "appName": "JellyLibrary",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "http",
+    "hostname": "localhost",
+    "cleartext": true
+  },
+  "android": {
+    "backgroundColor": "#0E1020"
+  }
+}

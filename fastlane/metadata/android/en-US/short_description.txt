@@ -1,0 +1,1 @@
+Offline search for your own Jellyfin library

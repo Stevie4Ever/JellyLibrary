@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">JellyLibrary</string>
+    <string name="title_activity_main">JellyLibrary</string>
+    <string name="package_name">com.stevie4ever.jellylibrary</string>
+    <string name="custom_url_scheme">com.stevie4ever.jellylibrary</string>
+</resources>

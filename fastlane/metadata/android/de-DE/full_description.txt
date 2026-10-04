@@ -1,0 +1,15 @@
+JellyLibrary ist eine Offline-Suche für die eigene Jellyfin-Mediathek. Einmal zu Hause mit dem Jellyfin-Server verbinden, die Liste aller Filme, Serien und Musik-Alben (inkl. Titelbilder) laden – und danach jederzeit ohne Netz durchsuchen.
+
+Typischer Einsatz: im Laden stehen und wissen wollen, ob man einen Film schon besitzt – in Sekunden nachsehen und Doppelkäufe vermeiden.
+
+Funktionen:
+• Offline-Suche über Filme, Serien und Musik-Alben
+• Auflösung (4K, 1080p, 720p, DVD, SD), Audio- und Untertitel-Sprachen pro Titel
+• Staffeln und Folgen für jede Serie
+• Titelbilder lokal gespeichert (optional)
+• Funktioniert mit Jellyfin 12 (moderner Authorization-Header)
+• Das Passwort wird nie gespeichert – nur das Zugriffstoken
+• Kein Tracking, keine Werbung, keine Google-Dienste
+• Auf Deutsch und Englisch; weitere Sprachen lassen sich leicht ergänzen
+
+Hinweis: Titel, Beschreibungen und Genres werden genau so angezeigt, wie sie der Jellyfin-Server liefert – in der dort eingestellten Metadatensprache.

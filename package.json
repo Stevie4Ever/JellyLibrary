@@ -1,0 +1,29 @@
+{
+  "name": "com.stevie4ever.jellylibrary",
+  "displayName": "JellyLibrary",
+  "version": "1.0.0",
+  "description": "Offline-Suche in der eigenen Jellyfin-Mediathek.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ecosystem:capacitor"
+  ],
+  "author": "Stevie4Ever",
+  "devDependencies": {
+    "@capacitor/cli": "^6.2.1"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.2.1",
+    "@capacitor/core": "^6.2.1"
+  },
+  "license": "GPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stevie4Ever/JellyLibrary.git"
+  },
+  "homepage": "https://github.com/Stevie4Ever/JellyLibrary",
+  "bugs": {
+    "url": "https://github.com/Stevie4Ever/JellyLibrary/issues"
+  }
+}

@@ -1,0 +1,15 @@
+JellyLibrary is an offline search for your own Jellyfin library. Connect once to your Jellyfin server at home, let the app download the list of all your movies, series and music albums (including cover images), and search it any time without a network connection.
+
+Typical use: standing in a shop and wondering whether you already own a movie – look it up in seconds and avoid buying it twice.
+
+Features:
+• Offline search across movies, series and music albums
+• Resolution (4K, 1080p, 720p, DVD, SD), audio languages and subtitle languages per title
+• Seasons and episodes for every series
+• Cover images stored locally (optional)
+• Works with Jellyfin 12 (modern Authorization header)
+• Your password is never stored – only the access token
+• No tracking, no ads, no Google services
+• Available in English and German; more languages are easy to add
+
+Note: Titles, descriptions and genres are shown exactly as delivered by your Jellyfin server, in the metadata language configured there.

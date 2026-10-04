@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <title>JellyLibrary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self' data: blob:; connect-src *; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self';" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+
+    <!-- ===== Such-Screen (Hauptansicht, funktioniert offline) ===== -->
+    <section id="screen-search" class="screen active">
+        <div class="topbar">
+            <span class="brand">🪼 JellyLibrary</span>
+            <button id="btn-open-settings" class="icon-btn" data-i18n-title="nav.settings" title="Einstellungen">&#9881;</button>
+        </div>
+
+        <div class="search-bar">
+            <input type="search" id="search-input" data-i18n-placeholder="search.placeholder" placeholder="Film, Serie oder Album suchen…"
+                   autocomplete="off" autocorrect="off" autocapitalize="none" />
+        </div>
+
+        <div class="filters">
+            <button class="chip active" data-filter="all" data-i18n="filter.all">Alle</button>
+            <button class="chip" data-filter="Movie" data-i18n="filter.movies">Filme</button>
+            <button class="chip" data-filter="Series" data-i18n="filter.series">Serien</button>
+            <button class="chip" data-filter="MusicAlbum" data-i18n="filter.music">Musik</button>
+        </div>
+
+        <div class="result-meta">
+            <span id="result-count">0 Treffer</span>
+            <span id="sync-hint"></span>
+        </div>
+
+        <div id="results" class="results"></div>
+
+        <div id="empty-state" class="empty-state hidden">
+            <p id="empty-text" data-i18n="empty.noLibrary">Noch keine Mediathek geladen.</p>
+            <button class="menu-btn" data-target="screen-settings" data-i18n="empty.toSettings">Zu den Einstellungen</button>
+        </div>
+    </section>
+
+    <!-- ===== Einstellungen / Server / Aktualisieren ===== -->
+    <section id="screen-settings" class="screen">
+        <div class="topbar">
+            <button class="back-btn" data-target="screen-search" data-i18n="nav.back">&larr; Zurück</button>
+            <span class="topbar-title" data-i18n="settings.title">Einstellungen</span>
+            <span class="icon-btn-placeholder"></span>
+        </div>
+
+        <div class="content">
+            <h3 data-i18n="settings.server">Jellyfin-Server</h3>
+            <label class="field">
+                <span data-i18n="settings.serverAddress">Server-Adresse</span>
+                <input type="url" id="cfg-server" inputmode="url" autocomplete="off"
+                       autocapitalize="none" placeholder="http://192.168.1.10:8096" />
+            </label>
+            <label class="field">
+                <span data-i18n="settings.user">Benutzername</span>
+                <input type="text" id="cfg-user" autocomplete="username"
+                       autocapitalize="none" data-i18n-placeholder="settings.userPlaceholder" placeholder="Benutzer" />
+            </label>
+            <label class="field">
+                <span data-i18n="settings.password">Passwort</span>
+                <input type="password" id="cfg-pass" autocomplete="current-password"
+                       data-i18n-placeholder="settings.passwordPlaceholder"
+                       placeholder="Nur zum Anmelden – wird nicht gespeichert" />
+            </label>
+
+            <div class="btn-row">
+                <button id="btn-test" class="menu-btn secondary" data-i18n="settings.test">Verbindung testen</button>
+            </div>
+            <div id="test-result" class="status-line"></div>
+
+            <hr />
+
+            <label class="field">
+                <span data-i18n="settings.language">Sprache</span>
+                <select id="cfg-lang"></select>
+            </label>
+
+            <hr />
+
+            <h3 data-i18n="settings.library">Mediathek</h3>
+            <label class="setting-row">
+                <span data-i18n="settings.images">Titelbilder mit herunterladen</span>
+                <input type="checkbox" id="cfg-images" checked />
+            </label>
+            <p class="hint" data-i18n="settings.imagesHint">Bilder werden lokal gespeichert (mehr Speicher, dafür offline sichtbar).</p>
+
+            <div class="btn-row">
+                <button id="btn-sync" class="menu-btn" data-i18n="settings.sync">Bibliothek aktualisieren</button>
+            </div>
+
+            <div id="sync-progress" class="progress hidden">
+                <div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
+                <span id="progress-text" class="status-line"></span>
+            </div>
+
+            <div id="lib-stats" class="lib-stats"></div>
+
+            <hr />
+            <button id="btn-clear" class="danger-btn" data-i18n="settings.clear">Lokale Daten löschen</button>
+        </div>
+    </section>
+
+    <!-- ===== Detail-Overlay ===== -->
+    <div id="detail-overlay" class="overlay hidden">
+        <div class="detail-card">
+            <button id="detail-close" class="detail-close" data-i18n-title="detail.close" title="Schließen">&times;</button>
+            <div class="detail-image"><img id="detail-img" alt="" /></div>
+            <div class="detail-body">
+                <span id="detail-type" class="badge"></span>
+                <h2 id="detail-title"></h2>
+                <p id="detail-sub" class="detail-sub"></p>
+                <div id="detail-media" class="detail-media"></div>
+                <p id="detail-overview" class="detail-overview"></p>
+                <div id="detail-episodes" class="detail-episodes"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/i18n.js"></script>
+    <script src="lang/de.js"></script>
+    <script src="lang/en.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/jellyfin.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

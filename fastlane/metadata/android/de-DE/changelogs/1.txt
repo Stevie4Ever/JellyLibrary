@@ -1,0 +1,1 @@
+Erste Version: Offline-Suche für die Jellyfin-Mediathek.
